@@ -18,7 +18,7 @@ Object.keys(data).forEach(function(key) {
 
       // If the user passed in class
       if (options["class"]) {
-        attrObj["class"] = "octicon octicon-" + key + " " + options["class"]
+        attrObj["class"] = "uauthicon uauthicon-" + key + " " + options["class"]
         attrObj["class"].trim()
       }
 
@@ -48,7 +48,7 @@ Object.keys(data).forEach(function(key) {
     "width": data[key].width,
     "height": data[key].height,
     "viewBox": "0 0 " + data[key].width + " " + data[key].height,
-    "class": "octicon octicon-" + key,
+    "class": "uauthicon uauthicon-" + key,
     "aria-hidden": "true"
   }
 

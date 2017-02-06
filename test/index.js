@@ -1,31 +1,31 @@
 import test from 'ava';
-import octicons from '../';
+import uauthicons from '../';
 import fs from 'fs';
 
-const octiconsLib = fs.readdirSync("../lib/svg/");
+const uauthiconsLib = fs.readdirSync("../lib/svg/");
 
-test('Octicons are loaded', t => {
-  t.truthy(octicons, "Didn't find any octicons.");
-  t.not(Object.keys(octicons).length, 0, "Didn't find any octicons.")
+test('uauthicons are loaded', t => {
+  t.truthy(uauthicons, "Didn't find any uauthicons.");
+  t.not(Object.keys(uauthicons).length, 0, "Didn't find any uauthicons.")
 });
 
-test('Octicons have keywords', t => {
-  t.truthy(octicons, "Didn't find any octicons.");
-  Object.keys(octicons).forEach( point => {
-    t.truthy(octicons[point].keywords, 'The octicon "' + point + '" doesn\'t have any keywords')
-    t.not(octicons[point].keywords.length, 0, 'The octicon "' + point + '" doesn\'t have any keywords')
+test('uauthicons have keywords', t => {
+  t.truthy(uauthicons, "Didn't find any uauthicons.");
+  Object.keys(uauthicons).forEach( point => {
+    t.truthy(uauthicons[point].keywords, 'The uauthicon "' + point + '" doesn\'t have any keywords')
+    t.not(uauthicons[point].keywords.length, 0, 'The uauthicon "' + point + '" doesn\'t have any keywords')
   })
 });
 
-test('Every octicon is in ./lib/data.json', t => {
-  octiconsLib.forEach( point => {
+test('Every uauthicon is in ./lib/data.json', t => {
+  uauthiconsLib.forEach( point => {
     point = point.replace('.svg', '')
-    t.truthy(octicons[point], './lib/data.json doesn\'t include the octicon "' + point + '"')
+    t.truthy(uauthicons[point], './lib/data.json doesn\'t include the uauthicon "' + point + '"')
   })
 })
 
-test('No deprecated octicons are in ./lib/data.json', t => {
-  Object.keys(octicons).forEach( point => {
-    t.truthy(octiconsLib.indexOf(point+'.svg') >= 0, './lib/data.json contains the deleted octicon `' + point + '`, please remove it.' );
+test('No deprecated uauthicons are in ./lib/data.json', t => {
+  Object.keys(uauthicons).forEach( point => {
+    t.truthy(uauthiconsLib.indexOf(point+'.svg') >= 0, './lib/data.json contains the deleted uauthicon `' + point + '`, please remove it.' );
   })
 })
